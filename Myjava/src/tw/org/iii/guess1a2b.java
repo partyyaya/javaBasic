@@ -47,7 +47,8 @@ public class guess1a2b {
 		
 		return ret;
 	}
-	//只要是 static 修飾的變數、函式，都屬類別所有，即無法經由物件呼叫來存取與使用，必須透過該類別的名稱來呼叫才行。
+//只要是 static 修飾的變數、函式，都屬類別所有，即無法經由物件呼叫來存取與使用，必須透過該類別的名稱來呼叫才行。
+//static類似於function自由使用
 static String checkAB(String a, String g){
 		int A=0,B=0;
 		for(int i=0;i<g.length();i++){
