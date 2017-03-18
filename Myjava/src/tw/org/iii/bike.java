@@ -1,8 +1,14 @@
 package tw.org.iii;
 
-public class bike {
-	private double speed;//private:不讓使用者知道 與 隨意改變
+public class bike {//extends Object,默認繼承Object
+	 double speed;//private:不讓使用者知道 與 隨意改變
+	/* 1:public    >>全世界
+	 * 2:protected
+	 * 3:無		   >>同一package
+	 * 4:private   >>class
+	 * */
 	int a;//a=0物件內初始化,a一定要有new物件出來才能使用
+	      //若無設定static之xxxx.變數或方法,無法使用於static範圍內
 	static int b;//b=0,雖跟a依樣=0,但b屬該"物件本質所有",若該物件呼叫幾次,b=幾次,不會因new初始化
 	{
 		
