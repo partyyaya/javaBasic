@@ -14,7 +14,18 @@ public class TWid {
 		this((int)(Math.random()*2)==0,area);
 	}
 	TWid(boolean ismale,int area){
-		char f0=letters.charAt(area);
+		char f0=letters.charAt(area);		
+		char f1 = ismale?'2':'1';
+		StringBuffer temp = new StringBuffer("" + f0 + f1);
+		for (int i=0; i<7; i++){
+			temp.append((int)(Math.random()*10)) ;
+		}
+		for (int i=0; i<10; i++){
+			if (isCheckOK(temp.toString() + i)){
+				id = temp.append(i).toString();//append:增加後面字串
+				break;
+			}
+		}
 	}
 	String getId(){
 		return id;
