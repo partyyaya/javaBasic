@@ -16,7 +16,7 @@ public class JF extends JFrame {
 		setLayout(new BorderLayout());
 		open = new JButton("open");
 		save = new JButton("save");
-		exit = new JButton("exit");
+	    exit = new JButton("exit");
 		painter =new JFpainter();
 		//add(open, BorderLayout.NORTH);
 		//add(save, BorderLayout.WEST);

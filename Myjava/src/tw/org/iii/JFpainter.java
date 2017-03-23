@@ -27,6 +27,17 @@ public class JFpainter extends JPanel implements MouseListener {
 		
 		g2d.setColor(Color.black);
 		//g2d.drawLine(x0, y0, x1, y1);
+		if(x0>x1){
+			int y;
+			y=x1;
+			x1=x0;
+			x0=y;
+		}else if(y0>y1){
+			int y;
+			y=y1;
+			y1=y0;
+			y0=y;
+		}
 		g2d.drawOval(x0, y0, Math.abs(x1-x0),Math.abs(y1-y0));
 		System.out.println("paint");
 		x0=y0=x1=y1=-1;
