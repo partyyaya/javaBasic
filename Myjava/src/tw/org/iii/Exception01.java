@@ -9,7 +9,7 @@ public class Exception01 {
 		try{//裡面可以為空,只要一檢查到錯誤則跳至適合的例外處理(部會執行之後直接跳至catch)
 			System.out.println(c[4]);
 			System.out.println(a/b);
-			try{//內部例外建議不使用,因沒有差別,若內部catch使用RuntimeException則之後子類都無法使用				
+			try{//若前內部catch使用RuntimeException or 父類別 則"之後"子類都無法使用				
 				System.out.println(a/b);
 			}catch(ArrayIndexOutOfBoundsException ee){
 				System.out.println("8787");
@@ -17,7 +17,8 @@ public class Exception01 {
 		}
 		catch(ArithmeticException ce){//ArithmeticException算術例外,catch:例外執行
 			b=1;
-			System.out.println(a/b);		
+			System.out.println(a/b);
+			
 		}
 		//ArrayIndexOutOfBoundsException,ArithmeticException都為RuntimeException的子類別
 			//子類可以互換,父與子,子必須在父之上,以子例外優先處理
