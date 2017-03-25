@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 public class JF extends JFrame {
 	private JButton open ,save,exit;
-	private JFpainter painter;
+	private JFpinter2 painter;
 	JF(){
 		super("視窗程式");//=JFrame()
 		//setLayout(new FlowLayout());
@@ -17,7 +17,7 @@ public class JF extends JFrame {
 		open = new JButton("open");
 		save = new JButton("save");
 	    exit = new JButton("exit");
-		painter =new JFpainter();
+		painter =new JFpinter2();
 		//add(open, BorderLayout.NORTH);
 		//add(save, BorderLayout.WEST);
 		//add(exit, BorderLayout.SOUTH);

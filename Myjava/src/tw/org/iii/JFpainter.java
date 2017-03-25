@@ -4,73 +4,104 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
-public class JFpainter extends JPanel implements MouseListener {
-	private int x0,y0,x1,y1,x,y,w,h;
-				
+public class JFpainter extends JPanel 
+	//implements MouseListener
+	{
+	private int x0,y0, x1, y1, x, y, w, h;
+	private MyMouseAdapter myMouseAdapter;
+	
 	public JFpainter(){
-		setBackground(Color.CYAN);
-		addMouseListener(this);
+		setBackground(Color.yellow);
+		//addMouseListener(this);
+		myMouseAdapter = new MyMouseAdapter(this);
+		addMouseListener(myMouseAdapter);
+		x0 = y0 = x1 = y1 = -1;
+		
 	}
+	
+	void setX0(int x0){this.x0=x0;}
+	void setY0(int y0){this.y0=y0;}
+	
 	@Override
 	protected void paintComponent(Graphics g) {
-		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		Graphics2D g2d = (Graphics2D)g;
-		g2d.setStroke(new BasicStroke(4));
-		//g2d.setColor(Color.black);		
-		//g2d.drawLine(0, 0, 300, 300);//左上角為(0,0)
 		
-		g2d.setColor(Color.black);
-		//g2d.drawLine(x0, y0, x1, y1);
-		if(x0>x1){
-			int y;
-			y=x1;
-			x1=x0;
-			x0=y;
-		}else if(y0>y1){
-			int y;
-			y=y1;
-			y1=y0;
-			y0=y;
-		}
-		g2d.drawOval(x0, y0, Math.abs(x1-x0),Math.abs(y1-y0));
-		System.out.println("paint");
-		x0=y0=x1=y1=-1;
+		Graphics2D g2d = (Graphics2D)g;
+		
+		g2d.setStroke(new BasicStroke(4));
+		g2d.setColor(Color.RED);
+		g2d.drawLine(x0, y0, x1, y1);
+		//g2d.drawOval(x, y, w, h);
 	}
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		//System.out.println("click");
+
+	void changeLine(int x1, int y1){
+		this.x1 = x1; this.y1 = y1;
+		int r = Math.abs(x0-this.x1); 
+		w = h = 2*r;
+		x = x0 - r;
+		y = y0 - r;
+		repaint();
+
+	}
+	
+//	@Override
+//	public void mouseClicked(MouseEvent e) {
+//		System.out.println("Clicked");
+//	}
+//
+//	@Override
+//	public void mouseEntered(MouseEvent e) {
+//	}
+//
+//	@Override
+//	public void mouseExited(MouseEvent e) {
+//	}
+//
+//	@Override
+//	public void mousePressed(MouseEvent e) {
+//		x0 = e.getX(); y0 = e.getY();
+//	}
+//
+//	@Override
+//	public void mouseReleased(MouseEvent e) {
+//		x1 = e.getX(); y1 = e.getY();
+//		int r = Math.abs(x0-x1); 
+//		w = h = 2*r;
+//		x = x0 - r;
+//		y = y0 - r;
+//		repaint();
+//	}
+	
+}
+
+class MyMouseAdapter extends MouseAdapter {
+	private JFpainter painter;
+	public MyMouseAdapter(JFpainter painter) {
+		this.painter = painter;
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		//System.out.println("press"+e.getX()+"x"+e.getY());
-		x0=Math.abs(e.getX());y0=Math.abs(e.getY());
+		super.mousePressed(e);
+		painter.setX0(e.getX());
+		painter.setY0(e.getY());
+		//x0 = e.getX(); y0 = e.getY();
 	}
+	
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println("released");
-		x1=Math.abs(e.getX());y1=Math.abs(e.getY());
-		repaint();//重劃
-	}
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-		
-	}
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-		
+		super.mouseReleased(e);
+		int x1 = e.getX(), y1 = e.getY();
+		painter.changeLine(x1, y1);
 	}
 }
+
+
+
+
 

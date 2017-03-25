@@ -4,11 +4,12 @@ public class ClassAndClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//add3 a1 = new add3();
-		add2 a2 = new add3();//以父類別創子類別,但不可以子創父,且變數名稱a1.a2不可依樣
+		add1 a2 = new add2(1);//以父類別創子類別,但不可以子創父,且變數名稱a1.a2不可依樣
 		//如上所示,建構子以父類別為主,若父子方法名稱相同則用子方法(宣告為主),若無相同方法則無法用子方法
 		//以宣告之類別為主,父看不到子的變數,但可用方法看到
 		//myf1(a2);
 		a2.m1();
+		
 	}
 	static void myf1(add1 a){
 		a.m1();//以參數為主去使用方法,若父子方法名稱相同則用子方法(宣告為主),若無相同方法則無法用子方法
@@ -41,8 +42,9 @@ class add2 extends add1{
 		a++;
 		System.out.println("20");
 	}
-	 void m1(){//若父與子有相同名稱之方法,則不能用static,因static為本類別專屬
+		void m1(){//若父與子有相同名稱之方法,則不能用static,因static為本類別專屬
 		 	super.m1();
+		 	
 			System.out.println("add2");
 		}
 }
