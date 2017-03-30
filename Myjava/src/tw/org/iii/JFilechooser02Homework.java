@@ -45,9 +45,10 @@ public class JFilechooser02Homework  {
 					FileReader fr1 = new FileReader(selectedFile);
 					BufferedReader br = new BufferedReader(fr1);
 					String temp;
+					String n = System.getProperty("line.separator");
 						while((temp=br.readLine())!=null){
 						textArea.append(temp);
-							
+						textArea.append(n);	
 						}
 					}catch(Exception ee){
 						System.out.println(ee.toString());
