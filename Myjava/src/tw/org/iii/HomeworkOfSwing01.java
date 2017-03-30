@@ -10,11 +10,14 @@ public class HomeworkOfSwing01 extends JFrame {
 	private JMenuBar menuBar;
 	private JMenu fileMenu,editMenu,aboutMenu;
 	private JMenuItem Open,Save,SaveAs,Close,Cut,Copy,Paste,About;
-	private JTextArea textArea = new JTextArea();
+	private JTextArea textArea ;
+	private JLabel label;
 	
 	public HomeworkOfSwing01(){
 		 initComponents();
 	        initEventListeners();
+	        initArea();
+	        initlabel();
 	}		
 	    private void initComponents() {
 	        setTitle("新增純文字檔案");
@@ -23,9 +26,10 @@ public class HomeworkOfSwing01 extends JFrame {
 	        initEditMenu();        
 	        initAboutMenu();
 	        initMenuBar();
-	        initArea();
+	        
 	    }
 	    public void initArea(){
+	    	textArea = new JTextArea();
 			textArea.setFont(new Font("細明體",Font.PLAIN, 16));
 			textArea.setLineWrap(true);//會偵測是否換行
 			JScrollPane panel = new JScrollPane(textArea,
@@ -61,6 +65,12 @@ public class HomeworkOfSwing01 extends JFrame {
 	        editMenu.add(Cut);
 	        editMenu.add(Copy);
 	        editMenu.add(Paste);
+	    }
+	    private void initlabel(){
+	    	label = new JLabel("未修改");
+	    	label.setHorizontalAlignment(SwingConstants.LEFT);
+	    	label.setBorder(BorderFactory.createEtchedBorder());
+	    	getContentPane().add(label, BorderLayout.SOUTH);
 	    }
 
 	    private void initFileMenu() {

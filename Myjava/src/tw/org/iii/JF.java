@@ -13,7 +13,7 @@ public class JF extends JFrame {
 	JF(){
 		super("視窗程式");//=JFrame()
 		//setLayout(new FlowLayout());
-		setLayout(new BorderLayout());
+		setLayout(new BorderLayout());//border布局設計師
 		open = new JButton("open");
 		save = new JButton("save");
 	    exit = new JButton("exit");
