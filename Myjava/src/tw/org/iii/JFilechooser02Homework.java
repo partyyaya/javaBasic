@@ -71,11 +71,9 @@ public class JFilechooser02Homework  {
                 ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
                 ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);//因會自動換行,所以不用
 		frame.getContentPane().add(panel, BorderLayout.CENTER);        
-	}
-	public static void main(String[] args)  
-	{  
+	}	
+	public static void main(String[] a){
 		new JFilechooser02Homework();
 	}
 } 
-
 

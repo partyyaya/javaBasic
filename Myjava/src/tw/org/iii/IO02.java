@@ -1,6 +1,6 @@
 package tw.org.iii;
 
-import java.io.File;//也可import java.io.*;在java.io的package裡的檔案
+import java.io.File;//也可import java.io.*;在java.io的package裡的檔案,但不包含File裡的子類別檔案
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
