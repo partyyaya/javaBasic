@@ -10,8 +10,7 @@ public class IO09OfPicture {//57
 	public static void main(String[] args)  {
 		long start = System.currentTimeMillis();
 		File readFile = new File("./dir1/ming.jpg");
-		File saveFile = new File("./dir2/ming.jpg");
-		
+		File saveFile = new File("./dir2/ming.jpg");		
 		try {
 			FileOutputStream fout = new FileOutputStream(saveFile);
 			FileInputStream fin = new FileInputStream(readFile);
