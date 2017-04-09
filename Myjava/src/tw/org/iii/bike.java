@@ -1,6 +1,7 @@
 package tw.org.iii;
 
 public class bike {//extends Object,默認繼承Object
+	public static void main(String[] args) {}
 	 double speed;//private:不讓使用者知道 與 隨意改變
 	/* 1:public    >>全世界
 	 * 2:protected

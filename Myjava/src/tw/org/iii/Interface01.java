@@ -1,6 +1,6 @@
 package tw.org.iii;
 
-public class Interface {
+public class Interface01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
