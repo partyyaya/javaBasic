@@ -10,17 +10,16 @@ public class net03supBasic {
 
 	public static void main(String[] args) {
 		try {
-			ServerSocket server = new ServerSocket(9999);
+			ServerSocket server = new ServerSocket(9999);//9999代表窗口編號
 			Socket socket  = server.accept();
 			
 			System.out.println(socket.getInetAddress().getHostAddress());
 			BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			int i; String line;
+			String line;
 			while ( (line = reader.readLine()) != null){
 				System.out.println(line);
 			}
-			reader.close();
-			
+			reader.close();			
 			server.close();
 		} catch (IOException e) {
 			System.out.println(e.toString());

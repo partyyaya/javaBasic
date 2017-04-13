@@ -60,6 +60,7 @@ public class week {
 				}		
 			}
 			static void month(int year ,int month){
+				
 				System.out.println(year+"/"+month);
 				System.out.println("日\t一\t二\t三\t四\t五\t六");	
 				int[] M={31,0,31,30,31,30,31,31,30,31,30,31};
@@ -118,7 +119,18 @@ public class week {
 						if ((i%400==0)||(i%4==0)&&(i%100!=0)){
 						    y++;}		
 					}
-				}			
+				}
+				
 			} 
-		}
-
+	}
+class re{
+	 void year(){
+		
+	}	
+	 void year(int a){
+		 year();
+	 }
+	 void year(int a,int x){
+		this.year();
+	 }
+}

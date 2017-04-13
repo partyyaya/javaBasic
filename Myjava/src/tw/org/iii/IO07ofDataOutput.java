@@ -12,10 +12,12 @@ public class IO07ofDataOutput {
 		try {
 			FileOutputStream fout = new FileOutputStream("./dir1/data1.dat");
 			DataOutputStream dout = new DataOutputStream(fout);
+			
 			dout.writeInt(a);
 			dout.writeInt(b);
 			dout.writeUTF(c);
 			dout.writeUTF(d);
+			dout.writeUTF(d+a);
 			dout.flush();
 			dout.close();
 		} catch (Exception e) {

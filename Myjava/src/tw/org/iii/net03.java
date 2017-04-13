@@ -9,6 +9,7 @@ public class net03 {
 		//for(int i=0;i<=65535;i++){
 			try {
 				Socket s1 = new Socket(InetAddress.getByName("10.2.1.127"),9999);
+				//開一tcp定址通道
 				//System.out.println("port"+i);
 				OutputStream out = s1.getOutputStream();
 				out.write("Hello, World".getBytes());

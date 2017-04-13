@@ -12,9 +12,10 @@ public class net02 {
 		String data = "wtf";
 		byte[] sendData = data.getBytes();
 		
-		try {
-			DatagramSocket s1 = new DatagramSocket();
+		try {//送出udp封包形式
+			DatagramSocket s1 = new DatagramSocket();//作udp輸出通道
 			DatagramPacket p1 = new DatagramPacket(sendData, sendData.length,InetAddress.getByName("10.2.24.109"),8444);
+			//DatagramPacket代表作出封包
 			s1.send(p1);
 			s1.close();
 			System.out.println("ok");
