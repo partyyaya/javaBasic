@@ -25,8 +25,6 @@ public class IO09OfPicture {//57
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		System.out.println(System.currentTimeMillis()-start);
-		
+		System.out.println(System.currentTimeMillis()-start);		
 	}
-
 }

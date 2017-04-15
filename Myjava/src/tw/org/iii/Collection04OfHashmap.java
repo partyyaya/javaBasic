@@ -8,9 +8,11 @@ public class Collection04OfHashmap {
 	public static void main(String[] args) {
 		//HashMap類似collection但不適collection
 		HashMap<String,Object> map = new HashMap<>();
-		map.put("name", "ming");
+		Object o1 = map.put("name", "ming");
 		map.put("weight", 80);
 		map.put("gender", true);
+		Object o2 = map.put("name", "ming2");
+		System.out.println(o2);//會印出放入name的前一個object
 		System.out.println(map.get("gender"));
 		System.out.println(map);
 		map.put("weight", 60.7);
